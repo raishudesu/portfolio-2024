@@ -33,13 +33,12 @@ const NavMenu = () => {
       <NavigationMenuList className="flex flex-col md:flex-row">
         {anchors.map(({ anchor, link }, index) => (
           <NavigationMenuItem key={index}>
-            <a href={`#${link}`}>
-              <NavigationMenuLink
-                className={`${navigationMenuTriggerStyle()} cursor-pointer transition-none `}
-              >
-                {anchor}
-              </NavigationMenuLink>
-            </a>
+            <NavigationMenuLink
+              href={`#${link}`}
+              className={`${navigationMenuTriggerStyle()} cursor-pointer transition-none font-semibold `}
+            >
+              {anchor}
+            </NavigationMenuLink>
           </NavigationMenuItem>
         ))}
       </NavigationMenuList>
