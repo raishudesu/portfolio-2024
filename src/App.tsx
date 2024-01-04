@@ -12,7 +12,7 @@ function App() {
       <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
         <div className="font-montserrat">
           <Header />
-          <main className="flex flex-col items-center px-3">
+          <main className="flex flex-col items-center px-3 overflow-hidden">
             <Hero />
             <About />
             <Projects />

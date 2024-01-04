@@ -5,7 +5,10 @@ import RevealAnimation from "../reveal-animation";
 
 const Hero = () => {
   return (
-    <section className="flex flex-col gap-6 justify-center  min-h-screen max-w-screen-lg">
+    <section
+      id="top"
+      className="flex flex-col gap-6 justify-center  min-h-screen max-w-screen-lg"
+    >
       <RevealAnimation>
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-1">

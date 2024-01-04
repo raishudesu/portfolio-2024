@@ -7,6 +7,7 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { Link } from "react-scroll";
 
 const anchors = [
   {
@@ -33,12 +34,16 @@ const NavMenu = () => {
       <NavigationMenuList className="flex flex-col md:flex-row">
         {anchors.map(({ anchor, link }, index) => (
           <NavigationMenuItem key={index}>
-            <NavigationMenuLink
-              href={`#${link}`}
+            <Link
+              to={`${link}`}
+              spy={true}
+              smooth={true}
+              duration={500}
+              offset={-100}
               className={`${navigationMenuTriggerStyle()} cursor-pointer transition-none font-semibold `}
             >
               {anchor}
-            </NavigationMenuLink>
+            </Link>
           </NavigationMenuItem>
         ))}
       </NavigationMenuList>

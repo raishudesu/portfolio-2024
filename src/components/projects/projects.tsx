@@ -4,6 +4,7 @@ import reverie from "@/assets/projects/reverie.png";
 import quillify from "@/assets/projects/quillify.png";
 import ProjectCard from "./project-card";
 import RevealAnimation from "../reveal-animation";
+import glowTop from "@/assets/glow-top.svg";
 
 const projectList = [
   {
@@ -43,9 +44,26 @@ const projectList = [
 
 const Projects = () => {
   return (
-    <section className="flex flex-col gap-4 justify-center items-center max-w-screen-lg pb-12">
+    <section
+      id="projects"
+      className="relative flex flex-col gap-4 justify-center items-center max-w-screen-lg pb-12"
+    >
+      <div
+        className="absolute inset-0 -z-10 -mx-28 pointer-events-none overflow-hidden"
+        aria-hidden="true"
+      >
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 -z-10">
+          <img
+            src={glowTop}
+            className="max-w-none ml-24 opacity-20 dark:opacity-30"
+            width={1404}
+            height={658}
+            alt="glow-top-background"
+          />
+        </div>
+      </div>
       <RevealAnimation>
-        <h2 className={`${typography.h2} text-center`}>Projects 🚀</h2>
+        <h2 className={`${typography.h2} text-center pt-6`}>Projects 🚀</h2>
       </RevealAnimation>
       <div className="grid lg:grid-cols-2 gap-2">
         {projectList.map(
