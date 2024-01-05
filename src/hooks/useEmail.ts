@@ -1,4 +1,3 @@
-import { FormValues } from "@/lib/types";
 import emailjs from "@emailjs/browser";
 
 type FormValues = {
@@ -9,12 +8,12 @@ type FormValues = {
 export const emailSubmit = async (details: FormValues) => {
   try {
     await emailjs.send(
-      process.env.NEXT_PUBLIC_SERVICE_KEY as string,
-      process.env.NEXT_PUBLIC_TEMPLATE as string,
+      import.meta.env.VITE_SERVICE_KEY as string,
+      import.meta.env.VITE_TEMPLATE as string,
       details,
-      process.env.NEXT_PUBLIC_KEY as string
+      import.meta.env.VITE_KEY as string
     );
   } catch (error) {
-    console.log(error);
+    throw new Error(error as string);
   }
 };

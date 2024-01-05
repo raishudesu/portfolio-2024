@@ -10,7 +10,10 @@ const Header = () => {
           href={"/"}
           className="flex gap-1 items-center scroll-m-20 text-2xl font-bold tracking-tight transition-colors first:mt-0"
         >
-          bnb.dev
+          <span className="bg-[#1c1917] text-[#f2f2f2] dark:bg-[#f2f2f2]  dark:text-[#1c1917] px-2 py-1 rounded-sm">
+            bnb
+          </span>
+          .dev
         </a>
         <div className="hidden md:block">
           <NavMenu />

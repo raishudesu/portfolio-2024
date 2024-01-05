@@ -5,6 +5,7 @@ import Header from "./components/header/header";
 import Hero from "./components/hero/hero";
 import Projects from "./components/projects/projects";
 import { ThemeProvider } from "./components/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Footer />
         </div>
       </ThemeProvider>
+      <Toaster />
     </>
   );
 }

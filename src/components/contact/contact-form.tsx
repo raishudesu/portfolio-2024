@@ -18,7 +18,7 @@ import { Loader } from "lucide-react";
 import { formSchema } from "@/lib/zod-schemas";
 import { toast } from "sonner";
 import { Textarea } from "@/components/ui/textarea";
-// import { emailSubmit } from "@/hooks/useEmail";
+import { emailSubmit } from "@/hooks/useEmail";
 
 const ContactForm = () => {
   const [loading, setLoading] = useState(false);
@@ -31,14 +31,14 @@ const ContactForm = () => {
   });
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setLoading(true);
-    // await emailSubmit(values);
-    form.reset();
-    toast("submitted");
-    console.log(values);
-    // toast({
-    //   title: "Submitted successfully",
-    //   description: "Thank you for hitting me up!",
-    // });
+
+    try {
+      await emailSubmit(values);
+      form.reset();
+      toast("Submitted Successfully");
+    } catch (error) {
+      toast("Something went wrong. Try again later");
+    }
     setLoading(false);
   }
 
